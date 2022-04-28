@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace PersonalProjectLibrary
 {
-    public class XrpProcessor
+    public class SolanaProcessor
     {
-
         public static async Task<CryptoModel> LoadCryptoInfo()
         {
-            string url = "https://api.coincap.io/v2/assets/xrp";
+            string url = "https://api.coincap.io/v2/assets/solana";
 
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
             {

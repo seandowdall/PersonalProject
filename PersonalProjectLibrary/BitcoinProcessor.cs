@@ -9,7 +9,7 @@ namespace PersonalProjectLibrary
 {
     public class BitcoinProcessor
     {
-        public static async Task<CryptoModel> LoadBitcoinInfo()
+        public static async Task<CryptoModel> LoadCryptoInfo()
         {
             string url = "https://api.coincap.io/v2/assets/bitcoin";
 

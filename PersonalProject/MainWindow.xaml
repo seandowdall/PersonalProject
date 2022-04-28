@@ -5,17 +5,93 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersonalProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Personal Project - Sean Dowdall - s00210945" Height="500" Width="1000">
+    <Window.Resources>
+        <!-- Base button style -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Cyan"/>
+            <Setter Property="Width" Value="500"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <!-- base background styling-->
+        <Style TargetType="TabControl">
+            <Setter Property="Background" Value="DarkGray"/>
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="DarkGray"/>
+        </Style>
+        <Style TargetType="TabItem">
+            <Setter Property="Background" Value="Cyan"/>
+        </Style>
+
+    </Window.Resources>
     <Grid>
-        <StackPanel>
-            <TextBlock Margin="20" FontSize="20">Select A CryptoCurrency To View Data</TextBlock>
-            <Button x:Name="loadBitcoinInfo" Margin="10" Click="loadBitcoinInfo_Click">Bitcoin</Button>
-            <Button x:Name="loadEthereuminfo" Margin="10" Click="loadEthereuminfo_Click">Ethereum</Button>
-            <Button x:Name="loadXRPinfo" Margin="10" Click="loadXRPinfo_Click">XRP</Button>
-            <Button x:Name="loadCardanoinfo" Margin="10" Click="loadCardanoinfo_Click">Cardano</Button>
-            <TextBlock x:Name="cryptoText" Margin="20"/>
-            
-        </StackPanel>
+        <TabControl TabStripPlacement="Top" >
+            <TabItem Name="CryptoData" Header="CryptoData" Width="100" FontFamily="Arial">
+                <StackPanel>
+                    <TextBlock TextAlignment="Center" Margin="20" FontSize="20" FontWeight="Bold" FontStyle="Italic" TextDecorations="Underline" FontFamily="Arial Black">Cryptocurrency Watchlist</TextBlock>
+                    <Button x:Name="loadBitcoinInfo" Margin="10" Click="loadBitcoinInfo_Click" FontFamily="Arial Black">Bitcoin</Button>
+                    <Button x:Name="loadEthereuminfo" Margin="10" Click="loadEthereuminfo_Click" FontFamily="Arial Black">Ethereum</Button>
+                    <Button x:Name="loadXRPinfo" Margin="10" Click="loadXRPinfo_Click" FontFamily="Arial Black">XRP</Button>
+                    <Button x:Name="loadCardanoinfo" Margin="10" Click="loadCardanoinfo_Click" FontFamily="Arial Black">Cardano</Button>
+                    <Button x:Name="loadSolanainfo" Margin="10" Click="loadSolanainfo_Click" FontFamily="Arial Black">Solana</Button>
+                    <TextBlock FontWeight="Bold" TextAlignment="Left" x:Name="cryptoText" Margin="0" FontFamily="Arial" FontSize="14"/>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem  Name="CryptoTable" Header="CryptoTable" Width="100" FontFamily="Arial" Loaded="CryptoTable_Loaded">
+                <Grid Margin="0,-3,0,0">
+
+                    <DataGrid x:Name="DataGridCrypto" Margin="10,10,10,325" FontFamily="Arial">
+                        <!-- Font Colour / style of column headings-->
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="Cyan"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                                <Setter Property="FontFamily" Value=" Arial"/>
+                                <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                                <Setter Property="BorderBrush" Value="Black"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <!-- Column Header Text and Bindings-->
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding name}" Header=" Name" Width="130" FontFamily="Arial"/>
+                            <DataGridTextColumn Binding="{Binding symbol}" Header=" Symbol" Width="130" FontFamily="Arial"/>
+                            <DataGridTextColumn Binding="{Binding rank}" Header=" Rank" Width="130" FontFamily="Arial" />
+                            <DataGridTextColumn Binding="{Binding priceUsd}" Header=" Price" Width="130" FontFamily="Arial"/>
+                            <DataGridTextColumn Binding="{Binding marketCapUsd}" Header=" Market Cap" Width="130" FontFamily="Arial"/>
+                            <DataGridTextColumn Binding="{Binding volumeUsd24Hr}" Header=" Volume(24Hr)" Width="130" FontFamily="Arial"/>
+                            <DataGridTextColumn Binding="{Binding changePercent24Hr}" Header=" Change(24Hr)" Width="*" FontFamily="Arial"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Button  FontWeight="Bold" Width="202" Margin="392,138,392,279" Click="Save_Grid_Data">Save Grid Data</Button>
+                    <TextBlock Name="successMessage" TextAlignment="Center" FontFamily="Arial" FontWeight="Bold" HorizontalAlignment="Left" Margin="321,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="108" Width="340"/>
+
+
+
+
+
+
+
+
+
+
+                </Grid>
+            </TabItem>
+
+
+
+
+
+
+
+
+
+
+        </TabControl>
+
 
 
     </Grid>
