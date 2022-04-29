@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersonalProject"
         mc:Ignorable="d"
-        Title="Personal Project - Sean Dowdall - s00210945" Height="500" Width="1000">
+        Title="Personal Project - Sean Dowdall - s00210945" Height="600" Width="1000">
     <Window.Resources>
         <!-- Base button style -->
         <Style TargetType="Button">
@@ -36,14 +36,18 @@
                     <Button x:Name="loadXRPinfo" Margin="10" Click="loadXRPinfo_Click" FontFamily="Arial Black">XRP</Button>
                     <Button x:Name="loadCardanoinfo" Margin="10" Click="loadCardanoinfo_Click" FontFamily="Arial Black">Cardano</Button>
                     <Button x:Name="loadSolanainfo" Margin="10" Click="loadSolanainfo_Click" FontFamily="Arial Black">Solana</Button>
-                    <TextBlock FontWeight="Bold" TextAlignment="Left" x:Name="cryptoText" Margin="0" FontFamily="Arial" FontSize="14"/>
+                    <Image x:Name="image"  Height="100" Margin="429,0" RenderTransformOrigin="0.202,0.5"/>
+                    <TextBlock FontWeight="Bold" TextAlignment="Left" x:Name="cryptoText" Margin="0,0,733,0" FontFamily="Arial" FontSize="14"/>
+
                 </StackPanel>
             </TabItem>
+
+
 
             <TabItem  Name="CryptoTable" Header="CryptoTable" Width="100" FontFamily="Arial" Loaded="CryptoTable_Loaded">
                 <Grid Margin="0,-3,0,0">
 
-                    <DataGrid x:Name="DataGridCrypto" Margin="10,10,10,325" FontFamily="Arial">
+                    <DataGrid x:Name="DataGridCrypto" Margin="10,10,10,424" FontFamily="Arial">
                         <!-- Font Colour / style of column headings-->
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -66,8 +70,8 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <Button  FontWeight="Bold" Width="202" Margin="392,138,392,279" Click="Save_Grid_Data">Save Grid Data</Button>
-                    <TextBlock Name="successMessage" TextAlignment="Center" FontFamily="Arial" FontWeight="Bold" HorizontalAlignment="Left" Margin="321,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="108" Width="340"/>
+                    <Button  FontWeight="Bold" Width="Auto" Margin="395,138,392,372" Click="Save_Grid_Data">Save Grid Data</Button>
+                    <TextBlock Name="successMessage" TextAlignment="Center" FontFamily="Arial" FontWeight="Bold" HorizontalAlignment="Left" Margin="318,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="108" Width="340"/>
 
 
 
@@ -80,6 +84,8 @@
 
                 </Grid>
             </TabItem>
+
+
 
 
 

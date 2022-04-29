@@ -133,5 +133,20 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\ethereum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\bitcoinNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\solana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\xrp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\cardano2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

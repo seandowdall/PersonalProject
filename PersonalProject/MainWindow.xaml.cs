@@ -36,6 +36,10 @@ namespace PersonalProject
             
             cryptoText.Text = $" Name:   { cryptoInfo.name}\n Symbol:   {cryptoInfo.symbol}\n Rank:   {cryptoInfo.rank}\n Price:   ${Math.Round(cryptoInfo.priceUsd, 2)}\n Market Cap:   ${Math.Round(cryptoInfo.marketCapUsd, 2)}\n Volume(24Hr):   ${Math.Round(cryptoInfo.volumeUsd24Hr, 2)}\n Change(24Hr):   {Math.Round(cryptoInfo.changePercent24Hr, 2)}%";
 
+            //display cryptocurrency image
+            image.Source = new BitmapImage(new Uri("images/bitcoinNew.png", UriKind.Relative));
+
+            
         }
 
         private async void loadEthereuminfo_Click(object sender, RoutedEventArgs e)
@@ -43,6 +47,8 @@ namespace PersonalProject
             var cryptoInfo = await EthereumProcessor.LoadCryptoInfo();
 
             cryptoText.Text = $" Name:   { cryptoInfo.name}\n Symbol:   {cryptoInfo.symbol}\n Rank:   {cryptoInfo.rank}\n Price:   ${Math.Round(cryptoInfo.priceUsd, 2)}\n Market Cap:   ${Math.Round(cryptoInfo.marketCapUsd, 2)}\n Volume(24Hr):   ${Math.Round(cryptoInfo.volumeUsd24Hr, 2)}\n Change(24Hr):   {Math.Round(cryptoInfo.changePercent24Hr, 2)}%";
+            //display cryptocurrency image
+            image.Source = new BitmapImage(new Uri("images/ethereum.png", UriKind.Relative));
         }
 
         private async void loadXRPinfo_Click(object sender, RoutedEventArgs e)
@@ -50,13 +56,18 @@ namespace PersonalProject
             var cryptoInfo = await XrpProcessor.LoadCryptoInfo();
 
             cryptoText.Text = $" Name:   { cryptoInfo.name}\n Symbol:   {cryptoInfo.symbol}\n Rank:   {cryptoInfo.rank}\n Price:   ${Math.Round(cryptoInfo.priceUsd, 2)}\n Market Cap:   ${Math.Round(cryptoInfo.marketCapUsd, 2)}\n Volume(24Hr):   ${Math.Round(cryptoInfo.volumeUsd24Hr, 2)}\n Change(24Hr):   {Math.Round(cryptoInfo.changePercent24Hr, 2)}%";
+            //display cryptocurrency image
+            image.Source = new BitmapImage(new Uri("images/xrp.png", UriKind.Relative));
         }
+
 
         private async void loadCardanoinfo_Click(object sender, RoutedEventArgs e)
         {
             var cryptoInfo = await CardanoProcessor.LoadCryptoInfo();
 
             cryptoText.Text = $" Name:   { cryptoInfo.name}\n Symbol:   {cryptoInfo.symbol}\n Rank:   {cryptoInfo.rank}\n Price:   ${Math.Round(cryptoInfo.priceUsd, 2)}\n Market Cap:   ${Math.Round(cryptoInfo.marketCapUsd, 2)}\n Volume(24Hr):   ${Math.Round(cryptoInfo.volumeUsd24Hr, 2)}\n Change(24Hr):   {Math.Round(cryptoInfo.changePercent24Hr, 2)}%";
+            //display cryptocurrency image
+            image.Source = new BitmapImage(new Uri("images/cardano2.png", UriKind.Relative));
         }
 
         private async void loadSolanainfo_Click(object sender, RoutedEventArgs e)
@@ -64,6 +75,8 @@ namespace PersonalProject
             var cryptoInfo = await SolanaProcessor.LoadCryptoInfo();
 
             cryptoText.Text = $" Name:   { cryptoInfo.name}\n Symbol:   {cryptoInfo.symbol}\n Rank:   {cryptoInfo.rank}\n Price:   ${Math.Round(cryptoInfo.priceUsd, 2)}\n Market Cap:   ${Math.Round(cryptoInfo.marketCapUsd, 2)}\n Volume(24Hr):   ${Math.Round(cryptoInfo.volumeUsd24Hr, 2)}\n Change(24Hr):   {Math.Round(cryptoInfo.changePercent24Hr, 2)}%";
+            //display cryptocurrency image
+            image.Source = new BitmapImage(new Uri("images/solana.png", UriKind.Relative));
         }
 
         private async void CryptoTable_Loaded(object sender, RoutedEventArgs e)
